@@ -1,0 +1,110 @@
+* {
+    font-family: 'Marcellus SC', serif;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.selectionContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.selectionMap {
+    width: 70%;
+    height: 100vh; 
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.7em;
+    align-items: center;
+    background-image: url(../assets/images/bgscroll.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30%;
+    height: 100vh;
+    color: #C89B3C;
+    box-sizing: border-box; 
+    border: 5px solid #010A13;
+    text-shadow: 1px 1px 2px black; 
+}
+
+.buttonContainer h2 {
+    margin-top: 100px;
+}
+
+.bgScroll {
+    width: 30%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.pageButton {
+    width: 200px;
+    height: 50px;
+    margin: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 15px; 
+    background: #1e2328;
+    color: #cdbe91;
+    box-shadow: inset 0 0 2px #000000;
+    border-image: linear-gradient(to bottom, #c8aa6d, #7a5c29);
+    border-image-slice: 1;
+    border-width: 2px;
+  }
+  
+  .pageButton:hover {
+    text-shadow: 0 0 5px #ffffff80;
+    box-shadow: 0 0 8px 0 #ffffff50;
+    background: linear-gradient(to bottom, #1e2328, #433d2b);
+    cursor: pointer;
+    transition: 0.1s;
+  }
+  
+  .pageButton:active {
+    text-shadow: none;
+    box-shadow: none;
+    color: #cdbe9130;
+  }
+
+  .point {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    color: #F0E6D2;
+    border-radius: 10%;
+  }
+
+  .point h3, img {
+    align-self: flex-end;
+  }
+
+  .point1 {
+    top: 150px;
+    left: 200px;
+  }
+
+  .point2 {
+    top: 50px;
+    left: 650px;
+  }
+
+  .point3 {
+    top: 380px;
+    left: 420px;
+  }
+
+  .labels {
+    position: absolute;
+    width: 100%;
+    margin-bottom: 15px;
+  }
