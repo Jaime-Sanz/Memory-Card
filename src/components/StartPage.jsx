@@ -12,7 +12,7 @@ export default function StartPage({ onStartButtonClick }) {
             <div className={styles.titleContainer}>
                 <img src={leagueLogo} alt="League of Legends Logo" className={styles.leagueLogo}/>
                 <h1 className={styles.pageTitle}>Memory Game</h1>
-                <button className={styles.pageButton} onClick={onStartButtonClick}>Start Game</button>
+                <button className={styles.pageButton} onClick={() => onStartButtonClick('selection')}>Start Game</button>
             </div>
         </div>
     );

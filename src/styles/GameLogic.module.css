@@ -1,0 +1,35 @@
+.scoreContainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px solid red;
+}
+
+.cardContainer {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    margin: 15px;
+}
+
+.cardImage {
+    width: 250px;
+    height: 420px;
+    border: 5px solid #463714;
+    border-radius: 5%;
+}
+
+.cardImage:hover {
+    border-radius: 0%;
+    border: 5px solid #C8AA6E;
+}
