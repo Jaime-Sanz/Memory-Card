@@ -10,7 +10,7 @@ import DemaciaImages from "../data/demaciaImages";
 import IoniaImages from "../data/ioniaImages";
 import ShurimaImages from "../data/shurimaImages";
 
-export default function GameType({ gameDifficulty }) {
+export default function GameType({ gameDifficulty, onExitButtonClicked }) {
 
     let currentBackground = '';
     
@@ -77,21 +77,32 @@ export default function GameType({ gameDifficulty }) {
 
     const [gameOver, setGameover] = useState(false);
     const [gameWin, setGameWin] = useState(false);
+    const [gameReset, setGameReset] = useState(false);
 
     const handleGameOver = () => {
-        setGameover(true);
+        gameOver != false ? setGameover(false) : setGameover(true);
     }
 
     const handleGameWin = () => {
         setGameWin(true);
     }
 
+    const handleResetGameLogic = () => {
+        (gameReset === true) ? setGameReset(false) : setGameReset(true);
+    }
+
+    const handleExitMenu = () => {
+        (gameReset === true) ? setGameReset(false) : setGameReset(true);
+        onExitButtonClicked();
+    }
+
     
     return(
         <div className={styles.gameContainer} style={{backgroundImage: `url(${currentBackground})`}}>
-            {gameOver && <GameLost />}
+            {gameOver && <GameLost onRetryClicked={handleGameOver} resetGameLogic={handleResetGameLogic} onExitClicked={handleExitMenu}/>}
             {gameWin && <GameWin />}
             <GameLogic 
+                onGameReset={gameReset}
                 cards={gameSettings} 
                 onGameOver={handleGameOver}
                 onGameWin={handleGameWin}/>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/GameLogic.module.css";
 
-export default function GameLogic({ cards, onGameOver, onGameWin }) {
-
+export default function GameLogic({ cards, onGameOver, onGameWin, onGameReset }) {
+    console.log(onGameReset);
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
     const [gameLost, setGameLost] = useState(false);
@@ -21,7 +21,6 @@ export default function GameLogic({ cards, onGameOver, onGameWin }) {
     const amountGameCards = shuffleArray(cards.cardRegion, cards.cardAmount);
 
     const cardSelected = (id) => {
-        console.log(selectedCards);
         if(!selectedCards.includes(id) && !gameLost && !gameWon) {
             setSelectedCards([...selectedCards, id]);
             changeScore();
@@ -36,6 +35,13 @@ export default function GameLogic({ cards, onGameOver, onGameWin }) {
             setCurrentScore(currentScore + 1);
         }     
     };
+
+    useEffect(() => {
+        setCurrentScore(0);
+        setGameLost(false);
+        setGameWon(false);
+        setSelectedCards([]);
+    }, [onGameReset]);
 
     useEffect(() => {
         if(currentScore > highScore){

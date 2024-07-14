@@ -17,11 +17,15 @@ export default function App() {
     setCurrentScreen(screen);
   }
 
+  const handleExitScreenClicked = () => {
+    setCurrentScreen('start');
+  }
+
   return (
     <>
     {currentScreen === 'start' && <StartPage onStartButtonClick={handleStartButtonClick}/>}
     {currentScreen === 'selection' && <MenuSelection  onRegionButtonClick={handleGameDifficulty}/>}
-    {currentScreen === 'game' && <GameType  gameDifficulty={gameDifficulty} />}
+    {currentScreen === 'game' && <GameType  gameDifficulty={gameDifficulty} onExitButtonClicked={handleExitScreenClicked}/>}
     </>
   );
 }
