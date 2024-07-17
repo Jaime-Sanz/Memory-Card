@@ -84,7 +84,7 @@ export default function GameType({ gameDifficulty, onExitButtonClicked }) {
     }
 
     const handleGameWin = () => {
-        setGameWin(true);
+        gameWin != false ? setGameWin(false) : setGameWin(true);
     }
 
     const handleResetGameLogic = () => {
@@ -99,13 +99,21 @@ export default function GameType({ gameDifficulty, onExitButtonClicked }) {
     
     return(
         <div className={styles.gameContainer} style={{backgroundImage: `url(${currentBackground})`}}>
-            {gameOver && <GameLost onRetryClicked={handleGameOver} resetGameLogic={handleResetGameLogic} onExitClicked={handleExitMenu}/>}
-            {gameWin && <GameWin />}
+            {gameOver && <GameLost 
+                            onRetryClicked={handleGameOver} 
+                            resetGameLogic={handleResetGameLogic} 
+                            onExitClicked={handleExitMenu}/>}
+            {gameWin && <GameWin 
+                            onRetryClicked={handleGameWin} 
+                            resetGameLogic={handleResetGameLogic} 
+                            onExitClicked={handleExitMenu}/>}
             <GameLogic 
                 onGameReset={gameReset}
                 cards={gameSettings} 
                 onGameOver={handleGameOver}
-                onGameWin={handleGameWin}/>
+                onGameWin={handleGameWin}
+                resetGameLogic={handleResetGameLogic}
+                onExitClicked={handleExitMenu} />
         </div>
     );
 }

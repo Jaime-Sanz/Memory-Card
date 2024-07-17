@@ -1,0 +1,46 @@
+.soundButton {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    z-index: 1;
+    bottom: 0px;
+    left: 50px;
+    background: #1e2328;
+    border-image: linear-gradient(to bottom, #c8aa6d, #7a5c29);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-bottom: #1e2328;
+}
+
+.soundButton:hover {
+    text-shadow: 0 0 5px #ffffff80;
+    box-shadow: 0 0 8px 0 #ffffff50;
+    background: linear-gradient(to bottom, #1e2328, #433d2b);
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.gitHubButton {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    z-index: 1;
+    bottom: 0px;
+    left: 120px;
+    background: #1e2328;
+    border-image: linear-gradient(to bottom, #c8aa6d, #7a5c29);
+    border-image-slice: 1;
+    border-width: 2px;
+    border-bottom: #1e2328;
+    background-image: url('src/assets/images/github-mark-white.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gitHubButton:hover {
+    text-shadow: 0 0 5px #ffffff80;
+    box-shadow: 0 0 8px 0 #ffffff50;
+    cursor: pointer;
+    transition: 0.1s;
+}

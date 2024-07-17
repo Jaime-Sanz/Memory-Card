@@ -6,6 +6,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
+    z-index: 2; 
 }
 
 .gameLostContainer {
@@ -21,7 +22,7 @@
     background-position: center;
     background-size: contain;
     color: #C89B3C;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 2px black;
 }
 
 .gameLostContainer h2 {

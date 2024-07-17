@@ -1,28 +1,84 @@
-.scoreContainer {
+.imgContainer {
     display: flex;
     width: 100%;
     height: auto;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: #1e2328;
+    box-shadow: inset 0 0 2px #000000;
+
+    background-size: cover;
+    border-bottom: 5px solid #C89B3C;
 }
+
+.leagueLogo {
+    width: 250px;
+    height: auto;
+    border-right: 1px solid#7b7a7a;
+}
+
+.scoreContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.scoreContainer h1 {
+    color: #F0E6D2;
+    text-shadow: 1px 1px 2px black;
+}
+
+.pageButton {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    left: 1400px;
+    background: #1e2328;
+    color: #cdbe91;
+    box-shadow: inset 0 0 2px #000000;
+    border-image: linear-gradient(to bottom, #c8aa6d, #7a5c29);
+    border-image-slice: 1;
+    border-width: 2px;
+    z-index: 1;
+  }
+  
+  .pageButton:hover {
+    text-shadow: 0 0 5px #ffffff80;
+    box-shadow: 0 0 8px 0 #ffffff50;
+    background: linear-gradient(to bottom, #1e2328, #433d2b);
+    cursor: pointer;
+    transition: 0.1s;
+  }
+  
+  .pageButton:active {
+    text-shadow: none;
+    box-shadow: none;
+    color: #cdbe9130;
+  }
 
 .cardContainer {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    width: 1534px;
+    height: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .card {
     display: flex;
-    width: 250px;
+    width: 200px;
     justify-content: center;
-    margin: 15px;
+    margin-top: 70px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .cardImage {
-    width: 250px;
+    width: 300px;
     height: 420px;
     border: 5px solid #463714;
     border-radius: 5%;

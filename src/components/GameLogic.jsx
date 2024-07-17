@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Styles from "../styles/GameLogic.module.css";
+import leagueLogo from "../assets/images/LoL_Logo_Rendered_LARGE.png"
+import playButtonSfx from "../data/buttonSound";
+import playCardSfx from "../data/cardSound";
 
-export default function GameLogic({ cards, onGameOver, onGameWin, onGameReset }) {
+export default function GameLogic({ cards, onGameOver, onGameWin, onGameReset, resetGameLogic, onExitClicked}) {
     console.log(onGameReset);
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
@@ -56,9 +59,17 @@ export default function GameLogic({ cards, onGameOver, onGameWin, onGameReset })
 
     return(
         <div>
-            <div className={Styles.scoreContainer}>
-                <h1>{'Highest Score: ' + highScore} </h1>
-                <h1>{'Score: ' + currentScore} </h1>
+            <div className={Styles.imgContainer}>
+                <img src={leagueLogo} alt="League of Legends Logo" className={Styles.leagueLogo}/>
+                <div className={Styles.scoreContainer}>
+                    <h1>{'Highest Score: ' + highScore}</h1>
+                    <h1>{'Score: ' + currentScore}</h1>
+                </div>
+                <button className={Styles.pageButton} onClick={() => {onExitClicked(); resetGameLogic(); playButtonSfx()}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#cdbe91">
+                        <path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/>
+                    </svg>
+                </button>
             </div>
             <div className={Styles.cardContainer}>
             {amountGameCards.map((card) => (
@@ -66,7 +77,7 @@ export default function GameLogic({ cards, onGameOver, onGameWin, onGameReset })
                     <img src={card.cardData} 
                          alt="Champion Splash Art" 
                          className={Styles.cardImage}
-                         onClick={() => cardSelected(card.id)}/>
+                         onClick={() => {cardSelected(card.id); playCardSfx()} }/>
                 </div>
             ))};
             </div>

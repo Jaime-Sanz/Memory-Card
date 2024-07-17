@@ -4,6 +4,7 @@ import styles from "../styles/MenuSelection.module.css";
 import regionLabelDemacia from "../assets/images/labelDemacia.png";
 import regionLabelIonia from "../assets/images/labelIonia.png";
 import regionLabelShurima from "../assets/images/labelShurima.png";
+import playButtonSfx from "../data/buttonSound";
 
 export default function MenuSelection({ onRegionButtonClick }) {
 
@@ -30,7 +31,7 @@ export default function MenuSelection({ onRegionButtonClick }) {
                             className={styles.pageButton}
                             onMouseEnter={() => handleMouseEnter('Demacia')}
                             onMouseLeave={handleMouseLeave}
-                            onClick={() => onRegionButtonClick('Easy')}>
+                            onClick={() => {onRegionButtonClick('Easy'); playButtonSfx()}}>
                             Demacia
                         </button>
                     </li>
@@ -39,7 +40,7 @@ export default function MenuSelection({ onRegionButtonClick }) {
                             className={styles.pageButton}
                             onMouseEnter={() => handleMouseEnter('Ionia')}
                             onMouseLeave={handleMouseLeave}
-                            onClick={() => onRegionButtonClick('Medium')}>
+                            onClick={() => {onRegionButtonClick('Medium'); playButtonSfx()}}>
                             Ionia
                         </button>
                     </li>
@@ -48,7 +49,7 @@ export default function MenuSelection({ onRegionButtonClick }) {
                             className={styles.pageButton}
                             onMouseEnter={() => handleMouseEnter('Shurima')}
                             onMouseLeave={handleMouseLeave}
-                            onClick={() => onRegionButtonClick('Hard')}>
+                            onClick={() => {onRegionButtonClick('Hard'); playButtonSfx()}}>
                             Shurima
                         </button>
                     </li>
