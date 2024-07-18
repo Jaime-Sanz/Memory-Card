@@ -13,7 +13,7 @@ export default function App() {
   const [music, setMusic] = useState(false);
 
 
-  const audioRef = useRef(new Audio('src/assets/sounds/backgroundMusic.mp3'));
+  const audioRef = useRef(new Audio('/sounds/backgroundMusic.mp3'));
 
   audioRef.current.volume = 0.06;
   audioRef.current.loop = true; 
